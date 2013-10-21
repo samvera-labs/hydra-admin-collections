@@ -35,6 +35,25 @@ If you want to extend Hydra::Admin::Collection, just create that class and inclu
    end
 ```
 
+## Testing
+
+Install hydra-jetty and start it up:
+```
+  rake jetty:unzip
+  rake jetty:start
+```
+
+Generate the test app:
+```
+  rake engine_cart:generate
+```
+
+Then run the test suite:
+``` 
+  rake spec
+```
+  
+
 
 ### Contributing
 
