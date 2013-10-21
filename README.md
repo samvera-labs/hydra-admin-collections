@@ -38,4 +38,4 @@ If you want to extend Hydra::Admin::Collection, just create that class and inclu
 
 ### Contributing
 
-Pull requests welcome, but please read CONTRIBUTING.md first.
+Pull requests welcome, but please read [CONTRIBUTING.md](CONTRIBUTING.md) first.
