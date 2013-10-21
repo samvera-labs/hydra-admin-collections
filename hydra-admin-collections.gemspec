@@ -10,8 +10,8 @@ Gem::Specification.new do |spec|
   spec.email         = ["justin@curationexperts.com"]
   spec.description   = %q{Administrative colletions for Hydra}
   spec.summary       = %q{Each object can belong to one and only one administrative collection. }
-  spec.homepage      = ""
-  spec.license       = "MIT"
+  spec.homepage      = "https://github.com/projecthydra/hydra-admin-collections"
+  spec.license       = "APACHE2"
 
   spec.files         = `git ls-files`.split($/)
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
