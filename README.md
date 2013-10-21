@@ -12,18 +12,30 @@ And then execute:
 
     $ bundle
 
-Or install it yourself as:
-
-    $ gem install hydra-admin-collections
 
 ## Usage
 
-TODO: Write usage instructions here
+Add to your ActiveFedora models:
 
-## Contributing
+```ruby
+    class GenericFile < ActiveFedora::Base
+      belongs_to_admin_collection
+    end
+```
 
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+This gives you a #collection= and #collection methods which hold a Hydra::Admin::Collection
+
+If you want to extend Hydra::Admin::Collection, just create that class and include the behavior module:
+
+```ruby
+   class Hydra::Admin::Collection < ActiveFedora::Base
+      include Hydra::Admin::CollectionBehavior
+      
+      # your code goes here
+   end
+```
+
+
+### Contributing
+
+Pull requests welcome, but please read CONTRIBUTING.md first.
