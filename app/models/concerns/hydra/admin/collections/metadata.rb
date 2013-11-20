@@ -6,7 +6,7 @@ module Hydra::Admin::Collections::Metadata
       sds.field :description, :string
     end
 
-    delegate_to :descMetadata, [:description, :name], multiple: false
+    has_attributes :description, :name, datastream: :descMetadata, multiple: false
   end
 end
 
