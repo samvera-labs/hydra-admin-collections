@@ -68,9 +68,9 @@ describe Hydra::Admin::Collection do
     expect(subject.coverage).to eq "Cleveland, Ohio"
   end
 
-  it "should have creators" do
-    subject.creators = ['frank', 'sarah']
-    expect(subject.creators).to eq ['frank', 'sarah']
+  it "should have creator" do
+    subject.creator = ['frank', 'sarah']
+    expect(subject.creator).to eq ['frank', 'sarah']
   end
 
 end
