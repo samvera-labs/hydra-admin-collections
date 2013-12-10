@@ -48,5 +48,30 @@ describe Hydra::Admin::Collection do
     expect(subject.description).to eq "some works I display"
   end
 
+  it "should have a publisher" do
+    subject.publisher = "Kelvin Smith Library, Cleveland, Ohio"
+    expect(subject.publisher).to eq "Kelvin Smith Library, Cleveland, Ohio"
+  end
+
+  it "should have a type" do
+    subject.type = "multimedia"
+    expect(subject.type).to eq "multimedia"
+  end
+
+  it "should have a language" do
+    subject.language = "eng"
+    expect(subject.language).to eq "eng"
+  end
+
+  it "should have a coverage" do
+    subject.coverage = "Cleveland, Ohio"
+    expect(subject.coverage).to eq "Cleveland, Ohio"
+  end
+
+  it "should have creator" do
+    subject.creator = ['frank', 'sarah']
+    expect(subject.creator).to eq ['frank', 'sarah']
+  end
+
 end
 
