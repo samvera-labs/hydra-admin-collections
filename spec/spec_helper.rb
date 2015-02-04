@@ -6,5 +6,5 @@ require 'engine_cart'
 EngineCart.load_application!
 # require 'rspec'
 RSpec.configure do |config|
-  config.color_enabled = true
+  config.color = true
 end

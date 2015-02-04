@@ -1,12 +1,13 @@
 module Hydra::Admin::Collections::Metadata
   extend ActiveSupport::Concern
   included do
-    has_metadata 'descMetadata', type: ActiveFedora::SimpleDatastream do |sds|
-      sds.field :name, :string
-      sds.field :description, :string
+    property :title, predicate: RDF::DC.title, multiple: false do |index|
+      index.as :stored_searchable
     end
-
-    has_attributes :description, :name, datastream: :descMetadata, multiple: false
+    property :description, predicate: RDF::DC.description, multiple: false do |index|
+      index.type :text
+      index.as :stored_searchable
+    end
   end
 end
 
