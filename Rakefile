@@ -9,8 +9,7 @@ require 'engine_cart/rake_task'
 
 APP_ROOT = '.'
 require 'jettywrapper'
-JETTY_ZIP_BASENAME = 'fedora-4/master'
-Jettywrapper.url = "https://github.com/projecthydra/hydra-jetty/archive/#{JETTY_ZIP_BASENAME}.zip"
+Jettywrapper.hydra_jetty_version = "v8.1.1"
 
 require 'rspec/core/rake_task'
 

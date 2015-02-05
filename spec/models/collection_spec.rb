@@ -40,9 +40,9 @@ describe Hydra::Admin::Collection do
   end
 
 
-  it "should have a title" do
-    subject.title = "A Collection of Art"
-    expect(subject.title).to eq "A Collection of Art"
+  it "should have a name" do
+    subject.name = "A Collection of Art"
+    expect(subject.name).to eq "A Collection of Art"
   end
 
   it "should have a description" do
