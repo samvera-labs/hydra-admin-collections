@@ -23,7 +23,7 @@ describe Hydra::Admin::Collection do
     let!(:member3) { GenericFile.create!(collection: subject) }
 
     it "should hold many members" do
-      subject.members.should == [member1, member2, member3]
+      expect(subject.members).to eq [member1, member2, member3]
     end
   end
 
@@ -32,9 +32,11 @@ describe Hydra::Admin::Collection do
     expect(subject.edit_users).to eq ['frank', 'sarah']
   end
 
-  it "should have defaultRights" do
-    subject.defaultRights.permissions = {"person"=>{"maria"=>"read","marcus"=>"discover"}, "group" => {"registered" => 'read'}}
-    subject.defaultRights.individuals.should == {"maria"=>"read","marcus"=>"discover"}
+
+  it "should have many permissions" do
+    subject.permissions_attributes = [{ name: "public", access: "read", type: "group" }, { name: "joe_creator", access: "edit", type: "person" }, { name: "calvin_collaborator", access: "edit", type: "person" }]
+    expect(subject.edit_users).to eq ["joe_creator","calvin_collaborator"]
+    expect(subject.read_groups).to eq ["public"]
   end
 
 
